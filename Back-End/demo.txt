@@ -1,0 +1,15 @@
+async(req, res, next) => {
+  try {
+    res.status(200).json({
+      message: "",
+      data: d,
+      success: true,
+      error: false,
+    });
+  } catch (error) {
+    console.log(error);
+    return next(errorHandeler(400,"internal server error",));
+  }
+};
+
+const errorHandeler = require("../middlewear/error");
